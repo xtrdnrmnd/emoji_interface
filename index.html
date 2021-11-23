@@ -1,0 +1,68 @@
+< !DOCTYPE html >
+    <html>
+
+        <head>
+            <!-- Meta information -->
+            <meta charset="utf-8">
+            <title>Emoji</title>
+
+            <!--CSS-->
+            <link rel="stylesheet" href="style.css" />
+
+            <!--JavaScript-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/4.0.2/autosize.min.js"></script>
+
+        </head>
+
+        <body>
+            <div id="input-container">
+                <p>Поле для ввода текста или Emoji</p>
+                <!-- При добавлении хэштега, упоминания, ссылки будет добавляться тег: в случае со ссылкой тег а, в остальных тег p -->
+                <textarea type="text" placeholder="Ваше сообщение" class="textarea" rows="1" cols="30"></textarea>
+                <button class="emoji" onclick="emojiPanel()"></button>
+                <div id="emoji-catalog">
+                    <button class="recently-used" onclick="switchRecent()"></button>
+                    <button class="all" onclick="switchAll()"></button>
+                    <div id="all-div"></div>
+                    <div id="recent-div"></div>
+                </div>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    autosize(document.querySelectorAll('.textarea'));
+        }, false);
+
+
+                index = 0;
+                emojiCatalog = document.getElementById("emoji-catalog");
+                emojiButton = document.getElementsByClassName("emoji")
+
+                // Show/Hide emoji panel
+                function emojiPanel() {
+            if (index == 0) {
+                    document.getElementById("emoji-catalog").style.visibility = "visible";
+                document.getElementById("all-div").style.visibility = "visible";
+                index = 1;
+            } else {
+                    document.getElementById("emoji-catalog").style.visibility = "hidden";
+                document.getElementById("recent-div").style.visibility = "hidden";
+                document.getElementById("all-div").style.visibility = "hidden";
+                index = 0;
+            }
+        }
+
+                function switchAll() {
+                    document.getElementById("all-div").style.visibility = "visible";
+                document.getElementById("recent-div").style.visibility = "hidden";
+        }
+                function switchRecent() {
+                    document.getElementById("recent-div").style.visibility = "visible";
+                document.getElementById("all-div").style.visibility = "hidden";
+        }
+            </script>
+
+
+        </body>
+
+    </html>

@@ -1,0 +1,115 @@
+body {
+    background-color: #202020;
+}
+
+#input-container {
+    width: 700px;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    margin: auto;
+    background-color:#333533;
+}
+
+p {
+    font-size: 2em;
+    -webkit-text-stroke: 0.2px #000000; 
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.textarea {
+    width: 300px;
+    background-color: #696969;
+    border: 1px solid #131517;
+    border-radius: 13px;
+    color: #ffffff;
+    font-size: medium;
+    resize: none;
+    padding: 6px 6px;
+    padding-right: 44px;
+    box-sizing: border-box;
+}
+
+.emoji, .all, .recently-used {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    border-radius: 55px;
+    border: 0px;
+    z-index: 100;
+
+    background-size: cover;
+}
+
+.emoji {
+    left: 839px;
+    top: 116px;
+    background-image: url("images/smile.png");
+}
+
+#emoji-catalog {
+    width: 304px;
+    height: 304px;
+    background-color: #696969;
+    position: absolute;
+    left: 875px;
+    top: 111px;
+    border-radius: 13px;
+    visibility: hidden;
+}
+
+.all {
+    float: left;
+    left: 60px;
+    top: 268px;
+    background-image: url("images/all.png");
+}
+
+.recently-used {
+    float: right;
+    right: 80px;
+    top: 268px;
+    background-image: url("images/recently-used.png");
+}
+
+#all-div, #recent-div  {
+    background-color: oldlace;
+    margin: 2px 2px 2px 2px;
+    width: 300px;
+    height: 260px;
+    border-radius: 13px;
+}
+
+#recent-div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    visibility: hidden;
+}
+
+#all-div:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    left: 2px;
+    top: 242px;
+    width: 149px;
+    height: 60px;
+    border-radius: 13px;
+    background-color: oldlace;
+    border: 0;
+  }
+
+#recent-div:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    right: 0px;
+    top: 240px;
+    width: 149px;
+    height: 60px;
+    border-radius: 13px;
+    background-color: oldlace;
+    border: 0;
+  }
